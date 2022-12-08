@@ -58,6 +58,10 @@ h4 {
   border-right: 1px solid #dedede;
 }
 
+.inc-exp-container > div:last-of-type {
+  border-left: 1px solid #dedede;
+}
+
 .money {
   font-size: 20px;
   letter-spacing: 1px;
