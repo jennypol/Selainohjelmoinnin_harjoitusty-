@@ -1,4 +1,8 @@
+//import { IncomeExpenses } from "./IncomeExpenses";
+
 const balance = document.getElementById('balance');
+const keskikulutus = document.getElementById('keskikulutus');
+const kokonaiskustannukset= document.getElementById('kokonaiskustannukset');
 const kilometritmaara = document.getElementById('kilometritmaara');
 const kulut = document.getElementById('kulut');
 const litrat = document.getElementById('litrat');
@@ -78,7 +82,6 @@ function updateValues() {
   const amounts = transactions.map(transaction => transaction.amount);
 
   const total = amounts.reduce((acc, item) => (acc += item), 0).toFixed(2);
-
   const income = amounts
     .filter(item => item > 0)
     .reduce((acc, item) => (acc += item), 0)
@@ -87,15 +90,18 @@ function updateValues() {
   const expense = (
     amounts.filter(item => item < 0).reduce((acc, item) => (acc += item), 0) * -1
   ).toFixed(2);
-
+  
   /*const kilsat = (
     kilsat += amount
   ).toFixed(2);*/
 
   balance.innerText = `${total}€`;
+  keskikulutus.innerText = `${total}€`; //keskikulutus = 
+  kokonaiskustannukset.innerText = `${total}l`; //kokonaiskustannukset = 100 x ajetut kilometrit 
   kilometritmaara.innerText = `${expense}km`;
   kulut.innerText = `${total}€`;
   litrat.innerText = `${expense}l`;
+
 }
 
 // Remove transaction by ID
