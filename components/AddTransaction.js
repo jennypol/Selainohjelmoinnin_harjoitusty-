@@ -24,15 +24,25 @@ export const AddTransaction = () => {
       <h3>Add new transaction</h3>
       <form onSubmit={onSubmit}>
         <div className="form-control">
-          <label htmlFor="text">Text</label>
-          <input type="text" value={text} onChange={(e) => setText(e.target.value)} placeholder="Enter text..." />
+          <label htmlFor="text">Auton nimi</label>
+          <input type="text" value={text} onChange={(e) => setText(e.target.value)} placeholder="Syötä auto..." />
         </div>
         <div className="form-control">
           <label htmlFor="amount"
-            >Amount <br />
-            (negative - expense, positive - income)</label
-          >
-          <input type="number" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="Enter amount..." />
+            >Syötä polttoainekustannukset
+            (positiivinen tulo)</label>
+          <input type="number" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="Syötä summa..." />
+        </div>
+        <div className="form-control">
+          <label htmlFor="amount"
+            >Polttoaine määrä
+            (litroina)</label>
+          <input type="number" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="Syötä polttoaine..." />
+        </div>
+        <div className="form-control">
+          <label htmlFor="amount"
+            >Tankillisella ajetut kilometrit</label>
+          <input type="number" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="Syötä kilometrit..." />
         </div>
         <button className="btn">Add transaction</button>
       </form>
