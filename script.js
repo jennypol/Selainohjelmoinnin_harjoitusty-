@@ -90,9 +90,9 @@ function updateValues() {
   ).toFixed(2);
 
   balance.innerText = `${total}€`;
-  kilometritmaara.innerText = `${income}km`;
-  kulut.innerText = `${expense}€`;
-  litrat.innerText = `${total}l`;
+  kilometritmaara.innerText = `${expense}km`;
+  kulut.innerText = `${total}€`;
+  litrat.innerText = `${expense}l`;
 }
 
 // Remove transaction by ID
