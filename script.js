@@ -1,6 +1,7 @@
 const balance = document.getElementById('balance');
-const money_plus = document.getElementById('money-plus');
-const money_minus = document.getElementById('money-minus');
+const kilometritmaara = document.getElementById('kilometritmaara');
+const kulut = document.getElementById('kulut');
+const litrat = document.getElementById('litrat');
 const list = document.getElementById('list');
 const form = document.getElementById('form');
 const text = document.getElementById('text');
@@ -89,8 +90,9 @@ function updateValues() {
   ).toFixed(2);
 
   balance.innerText = `${total}€`;
-  money_plus.innerText = `${income}km`;
-  money_minus.innerText = `${expense}€`;
+  kilometritmaara.innerText = `${income}km`;
+  kulut.innerText = `${expense}€`;
+  litrat.innerText = `${total}l`;
 }
 
 // Remove transaction by ID
