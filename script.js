@@ -1,4 +1,8 @@
+//import { IncomeExpenses } from "./IncomeExpenses";
+
 const balance = document.getElementById('balance');
+const keskikulutus = document.getElementById('keskikulutus');
+const kokonaiskustannukset= document.getElementById('kokonaiskustannukset');
 const kilometrit = document.getElementById('kilometrit');
 const kulut = document.getElementById('kulut');
 const litrat = document.getElementById('litrat');
@@ -101,6 +105,8 @@ function updateValues() {
   ).toFixed(2);
 
   balance.innerText = `${total}€`;
+  keskikulutus.innerText = `${total}€`; //keskikulutus = 
+  kokonaiskustannukset.innerText = `${total}l`;
   kilometrit.innerText = `${totalkilsat}km`;
   kulut.innerText = `${totaleurot}€`;
   litrat.innerText = `${totallitrat}l`;
