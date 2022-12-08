@@ -62,17 +62,21 @@ h4 {
   border-left: 1px solid #dedede;
 }
 
-.money {
+.kilometrit, .litrat, .kulut {
   font-size: 20px;
   letter-spacing: 1px;
   margin: 5px 0;
 }
 
-.money.plus {
+.kilometrit {
   color: #1522de;
 }
 
-.money.minus {
+.litrat {
+  color: #1522de;
+}
+
+.kulut {
   color: #c0392b;
 }
 
