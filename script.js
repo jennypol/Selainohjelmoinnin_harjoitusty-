@@ -88,6 +88,10 @@ function updateValues() {
     amounts.filter(item => item < 0).reduce((acc, item) => (acc += item), 0) * -1
   ).toFixed(2);
 
+  /*const kilsat = (
+    kilsat += amount
+  ).toFixed(2);*/
+
   balance.innerText = `${total}€`;
   kilometritmaara.innerText = `${expense}km`;
   kulut.innerText = `${total}€`;
