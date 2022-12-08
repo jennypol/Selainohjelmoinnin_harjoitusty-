@@ -37,12 +37,12 @@ export const AddTransaction = () => {
           <label htmlFor="amount"
             >Polttoaine määrä
             (litroina)</label>
-          <input type="number" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="Syötä polttoaine..." />
+          <input type="number" value={polttoaine} onChange={(e) => setAmount(e.target.value)} placeholder="Syötä polttoaine..." />
         </div>
         <div className="form-control">
           <label htmlFor="amount"
             >Tankillisella ajetut kilometrit</label>
-          <input type="number" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="Syötä kilometrit..." />
+          <input type="number" value={kilometrit} onChange={(e) => setAmount(e.target.value)} placeholder="Syötä kilometrit..." />
         </div>
     
 

@@ -1,11 +1,13 @@
 const balance = document.getElementById('balance');
-const kilometritmaara = document.getElementById('kilometritmaara');
+const kilometrit = document.getElementById('kilometrit');
 const kulut = document.getElementById('kulut');
 const litrat = document.getElementById('litrat');
 const list = document.getElementById('list');
 const form = document.getElementById('form');
 const text = document.getElementById('text');
 const amount = document.getElementById('amount');
+const polttoaine = document.getElementById('litratmaara');
+const kilsat = document.getElementById('kilometritmaara');
 
 // const dummyTransactions = [
 //   { id: 1, text: 'Flower', amount: -20 },
@@ -31,7 +33,9 @@ function addTransaction(e) {
     const transaction = {
       id: generateID(),
       text: text.value,
-      amount: +amount.value
+      amount: +amount.value,
+      polttoaine: +polttoaine.value,
+      kilsat: +kilsat.value
     };
 
     transactions.push(transaction);
@@ -44,6 +48,8 @@ function addTransaction(e) {
 
     text.value = '';
     amount.value = '';
+    polttoaine.value = '';
+    kilsat.value = '';
   }
 }
 
@@ -76,26 +82,28 @@ function addTransactionDOM(transaction) {
 // Update the balance, income and expense
 function updateValues() {
   const amounts = transactions.map(transaction => transaction.amount);
+  const amountslitrat = transactions.map(transaction => transaction.polttoaine);
+  const amountskilsat = transactions.map(transaction => transaction.kilsat);
 
   const total = amounts.reduce((acc, item) => (acc += item), 0).toFixed(2);
 
-  const income = amounts
+  const totaleurot = amounts
     .filter(item => item > 0)
     .reduce((acc, item) => (acc += item), 0)
     .toFixed(2);
 
-  const expense = (
-    amounts.filter(item => item < 0).reduce((acc, item) => (acc += item), 0) * -1
+  const totallitrat = (
+    amountslitrat.filter(item => item > 0).reduce((acc, item) => (acc += item), 0)
   ).toFixed(2);
 
-  /*const kilsat = (
-    kilsat += amount
-  ).toFixed(2);*/
+  const totalkilsat = (
+    amountskilsat.filter(item => item > 0).reduce((acc, item) => (acc += item), 0)
+  ).toFixed(2);
 
   balance.innerText = `${total}€`;
-  kilometritmaara.innerText = `${expense}km`;
-  kulut.innerText = `${total}€`;
-  litrat.innerText = `${expense}l`;
+  kilometrit.innerText = `${totalkilsat}km`;
+  kulut.innerText = `${totaleurot}€`;
+  litrat.innerText = `${totallitrat}l`;
 }
 
 // Remove transaction by ID
