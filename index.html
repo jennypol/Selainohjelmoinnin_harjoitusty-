@@ -37,16 +37,28 @@
       <h3>Lisää uusi tapahtuma</h3>
       <form id="form">
         <div class="form-control">
-          <label for="text">Text</label>
-          <input type="text" id="text" placeholder="Syötä teksti..." />
+          <label for="text">Auton nimi</label>
+          <input type="text" id="text" placeholder="Syötä auto..." />
         </div>
+
         <div class="form-control">
           <label for="amount"
-            >Summa <br />
-            (negatiivinen - menot, positiivinen - tulot)</label
-          >
+            >Syötä polttoainekustannukset
+            (positiivinen tulo)</label>
+            </div>
           <input type="number" id="amount" placeholder="Syötä summa..." />
+
+          <div class ="form-control">
+            <label for = "text">Polttoaine määrä
+            (litroina)</label>
+            <input type = "text" id ="text"placeholder="Syötä polttoaine..."/>
+
+            <div class ="form-control">
+            <label for ="text">Tankillisella ajetut kilometrit</label>
+              <input type = "text"id = "text" placeholder="Syötä kilometrit..."/>
+            </div>
         </div>
+       
         <button class="btn">Lisää tapahtuma</button>
       </form>
     </div>
