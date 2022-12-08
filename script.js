@@ -104,9 +104,12 @@ function updateValues() {
     amountskilsat.filter(item => item > 0).reduce((acc, item) => (acc += item), 0)
   ).toFixed(2);
 
+  const total100litrat = (totallitrat/totalkilsat*100).toFixed(2);
+  const total100eurot = (totaleurot/totalkilsat*100).toFixed(2);
+
   balance.innerText = `${total}€`;
-  keskikulutus.innerText = `${total}€`; //keskikulutus = 
-  kokonaiskustannukset.innerText = `${total}l`;
+  keskikulutus.innerText = `${total100litrat}€`; //keskikulutus = 
+  kokonaiskustannukset.innerText = `${total100eurot}l`;
   kilometrit.innerText = `${totalkilsat}km`;
   kulut.innerText = `${totaleurot}€`;
   litrat.innerText = `${totallitrat}l`;
