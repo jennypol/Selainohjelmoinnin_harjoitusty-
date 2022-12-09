@@ -108,8 +108,8 @@ function updateValues() {
   const total100eurot = (totaleurot/totalkilsat*100).toFixed(2);
 
   balance.innerText = `${total}€`;
-  keskikulutus.innerText = `${total100litrat}€`; //keskikulutus = 
-  kokonaiskustannukset.innerText = `${total100eurot}l`;
+  keskikulutus.innerText = `${total100litrat}l`; 
+  kokonaiskustannukset.innerText = `${total100eurot}€`;
   kilometrit.innerText = `${totalkilsat}km`;
   kulut.innerText = `${totaleurot}€`;
   litrat.innerText = `${totallitrat}l`;
