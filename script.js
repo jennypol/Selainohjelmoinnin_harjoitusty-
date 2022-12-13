@@ -84,7 +84,7 @@ function addTransactionDOM(transaction) {
   list.appendChild(item);
 }
 
-// Päivitetään muuttujat
+// Päivitetään muuttujat react hooks
 function updateValues() {
   const amounts = transactions.map(transaction => transaction.amount);
   const amountslitrat = transactions.map(transaction => transaction.polttoaine);
