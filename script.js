@@ -13,6 +13,7 @@ const amount = document.getElementById('amount');
 const polttoaine = document.getElementById('litratmaara');
 const kilsat = document.getElementById('kilometritmaara');
 
+
 // const dummyTransactions = [
 //   { id: 1, text: 'Flower', amount: -20 },
 //   { id: 2, text: 'Salary', amount: 300 },
@@ -57,19 +58,19 @@ function addTransaction(e) {
   }
 }
 
-// Generate random ID
+// randomi id
 function generateID() {
   return Math.floor(Math.random() * 100000000);
 }
 
-// Add transactions to DOM list
+// lisätään tapahtuma Dom luetteloon
 function addTransactionDOM(transaction) {
   // Get sign
   const sign = transaction.amount < 0 ? '-' : '+';
 
   const item = document.createElement('li');
 
-  // Add class based on value
+  // lisätään luokka muuttujaan
   item.classList.add(transaction.amount < 0 ? 'minus' : 'plus');
 
   item.innerHTML = `
@@ -83,7 +84,7 @@ function addTransactionDOM(transaction) {
   list.appendChild(item);
 }
 
-// Update the balance, income and expense
+// Päivitetään muuttujat
 function updateValues() {
   const amounts = transactions.map(transaction => transaction.amount);
   const amountslitrat = transactions.map(transaction => transaction.polttoaine);
@@ -103,19 +104,21 @@ function updateValues() {
   const totalkilsat = (
     amountskilsat.filter(item => item > 0).reduce((acc, item) => (acc += item), 0)
   ).toFixed(2);
-
+ 
+  
   const total100litrat = (totallitrat/totalkilsat*100).toFixed(2);
   const total100eurot = (totaleurot/totalkilsat*100).toFixed(2);
 
-  balance.innerText = `${total}€`;
+  //balance.innerText = `${total}€`;
   keskikulutus.innerText = `${total100litrat}l`; 
   kokonaiskustannukset.innerText = `${total100eurot}€`;
   kilometrit.innerText = `${totalkilsat}km`;
   kulut.innerText = `${totaleurot}€`;
   litrat.innerText = `${totallitrat}l`;
+  
 }
 
-// Remove transaction by ID
+// Poistetaan ID
 function removeTransaction(id) {
   transactions = transactions.filter(transaction => transaction.id !== id);
 
@@ -124,12 +127,12 @@ function removeTransaction(id) {
   init();
 }
 
-// Update local storage transactions
+// päivitetään tapahtumat
 function updateLocalStorage() {
   localStorage.setItem('transactions', JSON.stringify(transactions));
 }
 
-// Init app
+// app
 function init() {
   list.innerHTML = '';
 

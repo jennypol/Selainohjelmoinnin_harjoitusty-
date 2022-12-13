@@ -21,7 +21,20 @@ body {
 
 .container {
   margin: 30px auto;
-  width: 350px;
+  width: 430px;
+
+  background-color: #fff;
+  box-shadow: var(--box-shadow);
+  padding: 20px;
+  
+}
+.container>h1{
+  text-align: center;
+  text-decoration:none;
+}
+.container>h4{
+  text-align: center;
+  
 }
 
 h1 {
@@ -78,6 +91,9 @@ h4 {
 
 .kulut {
   color: #c0392b;
+}
+.keskikulutus, .kokonaiskustannukset{
+  text-align: center;
 }
 
 label {
